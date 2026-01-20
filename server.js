@@ -60,6 +60,8 @@ app.post("/book", async (req, res) => {
   }
 })
 
+
+
 // GET all bookings (Admin)
 app.get("/bookings", async (req, res) => {
   try {
