@@ -6,7 +6,7 @@
 
 <style>
 html{
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 body {
   margin: 0;
@@ -22,13 +22,13 @@ nav{
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
-  z-index: 1000;
+  z-index:4;
 }
 
 nav a {
   color: white;
   margin-left: 20px;
-  text-decoration: none;
+  text-decoration:none;
 }
 
 .hero {
@@ -40,6 +40,7 @@ nav a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 .hero button {
@@ -48,6 +49,10 @@ nav a {
   border: none;
   font-size: 16px;
   cursor: pointer;
+}
+
+.hero button:hover{
+  box-shadow: 0px 0px 20px white;
 }
 
 section {
@@ -219,10 +224,11 @@ input, textarea {
 
 .close-btn {
   position: absolute;
-  top: 10px;
+  top: 4px;
   right: 15px;
   font-size: 28px;
   cursor: pointer;
+  color:#000;
 }
 
 
@@ -417,7 +423,7 @@ footer {
       <input id="bname" type="text" placeholder="Your Name" required>
       <input id="bemail" type="email" placeholder="Your Email" required>
 
-      <select id="eventType" required>
+      <select id="eventType" style="cursor: pointer;" required>
         <option value="">Select Event Type</option>
         <option value="Wedding">Wedding</option>
         <option value="Birthday">Birthday</option>
@@ -459,6 +465,7 @@ function submitForm(e) {
 
 const emailInput = document.getElementById("email").value;
 const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
 if (!emailRegex.test(emailInput)) {
   showToast("Only Gmail addresses ending with @gmail.com are allowed", "error");
   return;
