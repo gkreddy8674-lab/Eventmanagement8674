@@ -58,9 +58,7 @@ app.post("/book", async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: "Error saving booking" });
   }
-});
-
-
+})
 
 // GET all bookings (Admin)
 app.get("/bookings", async (req, res) => {
